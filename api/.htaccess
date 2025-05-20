@@ -1,0 +1,4 @@
+RewriteEngine On
+RewriteBase /regions/api/
+RewriteRule ^allregions/API/?$ index.php [L]
+RewriteRule ^districts/API/?$ districts.php [L]
