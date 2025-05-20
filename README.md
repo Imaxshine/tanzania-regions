@@ -21,7 +21,9 @@ LET GET ALL REGIONS WITH DISTRICTS
 ![image](https://github.com/user-attachments/assets/7a661b87-cc91-4fce-9c14-0a0ab699c3c6)
 
 
-:-sample output
+:-sample output 🧾
+
+
 ![image](https://github.com/user-attachments/assets/32033646-ecbd-4dc9-9b0b-f5df6543a49a)
 
 
