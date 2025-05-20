@@ -1,4 +1,7 @@
 <?php
+
+//TODO RENAME THIS (index.php) TO AVOID LANDING PAGE COLLISION
+
 require_once __DIR__ . "/autoload.php";
 use Regions\Arusha;
 use Regions\Dar_es_salaam;
@@ -6,7 +9,6 @@ use Regions\Dodoma;
 use Regions\Tanga;
 use Regions\Kilimanjaro;
 
-//Kusanya Region zote ifadhi katika Array
 
 $regions = [
     new Arusha(),
