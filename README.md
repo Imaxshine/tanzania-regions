@@ -2,7 +2,7 @@
 
 ***
 
- #### :one: What is this package hold. :point_down: 
+ ## :one: What is this package hold. :point_down: 
 > This is a package that will enable you to program in all its regions and districts available in Tanzania.
 
 > We have put you with API Endpoints that will make your projects easier for you to process data in this [Tanzania-regions](https://github.com/Imaxshine/tanzania-regions.git "Tanzania Package & API") Package. :ghost:
@@ -25,7 +25,7 @@ $regionDecoded = json_decode($regionEncoded,true);
 ```
 ___
 
-#### :two: How to install [Tanzania-regions](https://github.com/Imaxshine/tanzania-regions.git "Tanzania Package & API") in your OS (Operating System) :blush:
+## :two: How to install [Tanzania-regions](https://github.com/Imaxshine/tanzania-regions.git "Tanzania Package & API") in your OS (Operating System) :blush:
 
 Go direct to your project root.
 :rocket: ___I will show you up on how to open quickly your root project___ :smile:
@@ -54,13 +54,13 @@ ___
 
 ___
 
-#### :three: General command line Installation :eye:
+## :three: General command line Installation :eye:
 ```bash
 git clone https://github.com/Imaxshine/tanzania-regions.git
 ```
 ___
 
-#### :four: How to use [Tanzania-regions](https://github.com/Imaxshine/tanzania-regions.git "Tanzania Package & API") Package :star_struck: 
+## :four: How to use [Tanzania-regions](https://github.com/Imaxshine/tanzania-regions.git "Tanzania Package & API") Package :star_struck: 
 
 > PHP
 > - Get only Regions without districts
@@ -96,11 +96,6 @@ foreach($regions as $region){
 }
 // Let encode results with JSON
 $regionEncoded = json_encode($data);
-
-//Data in JSON file
-$jsonFile = __DIR__ . "/allregions.json";
-file_put_contents($jsonFile,$regionEncoded);
-
 // After then we need to decode our previour encoded JSON ready to use any where
 $regionDecoded = json_decode($regionEncoded,true);
 ```

@@ -39,7 +39,7 @@ $data = [];
 foreach($regions as $region){
     $name2 = (new ReflectionClass($region))->getShortName();
    $name2 = str_replace("_"," ",$name2);
-   $district = $region->districtsList();
+   
    $data[] = [
     'region'=>$name2
    ];
