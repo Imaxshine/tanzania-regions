@@ -1,29 +1,25 @@
-After install this packages through https://github.com/Imaxshine/Tzregions.git
-In your Landing page (index.php) you are needed write this short of block code so as to apply this Tanzania Regions Package
+## :boom: Tanzania Regions with Districts :rocket:
 
-LET NOW GET ONLY, ALL REGIONS NAMES
+***
 
-:-sample code 🔍
+ #### :one: What is this package hold. :point_down: 
+> This is a package that will enable you to program in all its regions and districts available in Tanzania.
 
+> We have put you with API Endpoints that will make your projects easier for you to process data in this [Tanzania-regions](https://github.com/Imaxshine/tanzania-regions.git "Tanzania Package & API") Package. :ghost:
+>
+> And so far our API is RESTFUL API, the other beauty is that, We have use JSON to __encode__ and finally to **decode** :smile:
+> 
+***
 
-![image](https://github.com/user-attachments/assets/60348b7d-139c-4093-84fe-ebe6bdf6f0f8)
+##### How does this JSON look like? :eyes:
 
+```php
+// Let encode results with JSON
+$regionEncoded = json_encode($data);
+```
 
-:-sample output 🧾
+```php
+// After then we need to decode our previour encoded JSON ready to use any where
+$regionDecoded = json_decode($regionEncoded,true);
 
-![image](https://github.com/user-attachments/assets/7b225f2c-b4eb-4774-afa1-e11691bfb0db)
-
-LET GET ALL REGIONS WITH DISTRICTS
-
-:-sample code 🔍
-
-
-![image](https://github.com/user-attachments/assets/7a661b87-cc91-4fce-9c14-0a0ab699c3c6)
-
-
-:-sample output 🧾
-
-
-![image](https://github.com/user-attachments/assets/32033646-ecbd-4dc9-9b0b-f5df6543a49a)
-
-
+```
