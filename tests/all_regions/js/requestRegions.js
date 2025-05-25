@@ -12,9 +12,13 @@ async function RequestAllRegions(){
         method:"GET",
     });
     if(responses.ok){
-        let results = await responses.text();
-        document.getElementById('getAllRegions').innerHTML = `<p class="alert alert-success">${results}</p>`;
-        document.getElementById('dialog').showModal();
+        let results = await responses.json();
+        document.getElementById('getAllRegions').innerHTML = "";
+        results.forEach(result=>{
+            console.log(result.region);
+            document.getElementById('getAllRegions').innerHTML += `<p class="alert alert-success">${result.region}</p>`;
+            document.getElementById('dialog').showModal();
+        })
     }else{
         document.getElementById('getAllRegions').innerHTML = `<p class="alert alert-danger">Error: ${results}</p>`;
         document.getElementById('dialog').showModal();
