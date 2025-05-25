@@ -34,7 +34,7 @@ $regions = [
     new Tanga()
 ];
 
-//Let create class Instance in a loop so as to access our methods
+//Let create class Instance in a loop to access our methods
 // $data is an accumulator or empty arry
 
 $data = [];
@@ -58,34 +58,3 @@ file_put_contents($jsonFile,$regionEncoded);
 //DecodedData
 $regionDecoded = json_decode($regionEncoded,true);
 // print_r($regionDecoded);
-
-//Sample usages is like 
-
-?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Regions with Districts</title>
-</head>
-<body>
-    <div>
-        <form action="" id="region_district">
-            <select name="districts" id="districts">
-                <option disabled selected>--Districts--</option>
-                <?php foreach($regionDecoded as $regData) : ?>
-
-                    <optgroup label="<?php echo $regData['region'] ?>">
-                        <?php foreach($regData['district'] as $districts) : ?>
-
-                            <option value="<?php echo $districts ?>"> <?php  echo $districts; ?> </option>
-
-                        <?php endforeach; ?>
-                    </optgroup>
-                <?php endforeach; ?>
-            </select>
-        </form>
-    </div>
-</body>
-</html>

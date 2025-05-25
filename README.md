@@ -132,4 +132,95 @@ How to apply this in real life with **HTML** form :joy:
 
 ***
 
-[^1]: Nitaendelea na district hapa
+> - How to get all regions with districts.
+
+```php
+<?php
+include_once __DIR__ . "/tanzania-regions/autoload.php";
+
+use Regions\Arusha;
+use Regions\Dar_es_salaam;
+use Regions\Dodoma;
+use Regions\Kilimanjaro;
+use Regions\Tanga;
+
+//Prepare all Objects in an array
+$regions = [
+    new Arusha(),
+    new Dar_es_salaam(),
+    new Dodoma(),
+    new Kilimanjaro(),
+    new Tanga()
+];
+
+//Let create class Instance in a loop to access our methods
+// $data is an accumulator or empty arry
+
+$data = [];
+
+foreach($regions as $region)
+{
+    $reg = new ReflectionClass($region);
+    $regionName = str_replace("_"," ",$reg->getShortName());
+    //Let Apply nested Array
+    $data[] = [
+        'region'=>$regionName,
+        'district'=>$region->districtsList() //Apply nested array
+    ]; 
+}
+//Encoded data
+$regionEncoded = json_encode($data);
+
+//DecodedData
+$regionDecoded = json_decode($regionEncoded,true);
+// print_r($regionDecoded);
+
+```
+
+How to apply this regions with districts in real life with HTML form 😂
+
+```php
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regions with Districts</title>
+    <style>
+        .form_container{
+            display: flex;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="form_container">
+        <form action="" id="region_district">
+            <select name="districts" id="districts">
+                <option disabled selected>--Districts--</option>
+                <?php foreach($regionDecoded as $regData) : ?>
+
+                    <optgroup label="<?php echo $regData['region'] ?>">
+                        <?php foreach($regData['district'] as $districts) : ?>
+
+                            <option value="<?php echo $districts ?>"> <?php  echo $districts; ?> </option>
+
+                        <?php endforeach; ?>
+                    </optgroup>
+                <?php endforeach; ?>
+            </select>
+        </form>
+    </div>
+</body>
+</html>
+```
+
+That is the way you may use to get this output in your HTML form :pushpin:
+
+![region_&_district](/screenshort/districts.png)
+
+___
+
+## :five: How to use [Tanzania-regions](https://github.com/Imaxshine/tanzania-regions.git) API
+
+
