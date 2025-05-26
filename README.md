@@ -221,6 +221,73 @@ That is the way you may use to get this output in your HTML form :pushpin:
 
 ___
 
-## :five: How to use [Tanzania-regions](https://github.com/Imaxshine/tanzania-regions.git) API
+## :five: How to use [Tanzania-regions](https://github.com/Imaxshine/tanzania-regions.git) API in all regions.
+
+ In your any production file with `.php` you shall apply this API Endpoint :point_down:
+ ```php
+ $all_region_api = $_SERVER['REQUEST_SCHEME']."://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']."tanzania-regions/api/regions/";
+ ```
+
+ How to use this in production with `cURL` as PHP Library.
+
+ ``` php
+<?php
+//Remember this API URL is only working after installing this package
+ $all_region_api = $_SERVER['REQUEST_SCHEME']."://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']."tanzania-regions/api/regions/";
+
+//Initiate curl
+$ch = curl_init();
+curl_setopt($ch,CURLOPT_URL,$all_region_api);
+curl_setopt($ch,CURLOPT_RETURNTRANSFER,1);
+$responses = curl_exec($ch);
+curl_close($ch); //close CURL
+if(curl_error($ch)){
+    die('cURL Error: ' . curl_errno($ch));
+}
+//Decode the responses from our API
+$results = json_decode($responses,true);
+//header('Content-Type:application/json'); 
+print_r($results);
+ ```
+
+:fire: The output will look like :point_down: and use it as you can
+![api1_output](/screenshort/api_output1.png)
+
+***
+
+ ## :six: How to use [Tanzania-regions](https://github.com/Imaxshine/tanzania-regions.git) API to get districts.
+
+In your any production file with `.php` you shall apply this API Endpoint :point_down:
 
 
+``` php
+$all_districts_api = $_SERVER['REQUEST_SCHEME']."://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']."tanzania-regions/api/districts/";
+```
+
+How to use this in production with `cURL` as PHP Library.
+
+``` php
+<?php
+//Remember this API URL is only working after installing this package
+ $all_districts_api = $_SERVER['REQUEST_SCHEME']."://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']."tanzania-regions/api/districts/";
+
+//Initiate curl
+$ch = curl_init();
+curl_setopt($ch,CURLOPT_URL,$all_districts_api);
+curl_setopt($ch,CURLOPT_RETURNTRANSFER,1);
+$responses = curl_exec($ch);
+curl_close($ch);
+if(curl_error($ch)){
+    die('cURL Error: ' . curl_errno($ch));
+}
+//Decode the responses from our API
+$results = json_decode($responses,true);
+//header('Content-Type:application/json'); 
+print_r($results);
+```
+
+:fire: The output will look like :point_down: and use it as you can
+
+![districts_output](/screenshort/district2.png)
+
+***

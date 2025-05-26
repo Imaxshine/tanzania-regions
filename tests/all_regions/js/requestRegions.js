@@ -18,7 +18,7 @@ async function RequestAllRegions(){
             console.log(result.region);
             document.getElementById('getAllRegions').innerHTML += `<p class="alert alert-success">${result.region}</p>`;
             document.getElementById('dialog').showModal();
-        })
+        });
     }else{
         document.getElementById('getAllRegions').innerHTML = `<p class="alert alert-danger">Error: ${results}</p>`;
         document.getElementById('dialog').showModal();

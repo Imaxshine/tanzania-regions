@@ -1,4 +1,8 @@
 <?php
+header('content-Type:application/json');
+header('Access-Control-Allow-Method: GET');
+header('Access-Control-Allow-Origin: *');
+
 include_once __DIR__ . "/../../autoload.php";
 
 use Regions\Arusha;
@@ -14,22 +18,18 @@ $regions = [
     new Kilimanjaro(),
     new Tanga()
 ];
-header('content-Type:application/json');
+
+$data = [];
 foreach($regions as $region)
 {
     $name = (new ReflectionClass($region))->getShortName();
     $district = $region->districtsList();
-    $data = json_encode([
+    $data[] = [
         "region"=>$name,
         "district"=>$district
-    ]);
-    
-    $responses = json_decode($data,true);
-
-    print_r($responses);
-
+    ];
 }
 
-$districtEndPoint = $_SERVER['REQUEST_SCHEME']."://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']."api/districts";
+//Get data in JSON format
+echo json_encode($data,JSON_PRETTY_PRINT);
 
-echo "EndPoint: " . $districtEndPoint;
